@@ -225,7 +225,7 @@ if [ -z "${OLLAMA_SKIP_VULKAN_GENERATE}" -a -d "${VULKAN_ROOT}" ] && [ -z "${OLL
     echo "Vulkan and capabilities libraries detected - building dynamic Vulkan library"
     init_vars
     RUNNER=vulkan
-    CMAKE_DEFS="-DCMAKE_SKIP_RPATH=on -DBUILD_SHARED_LIBS=on -DCMAKE_POSITION_INDEPENDENT_CODE=on -DGGML_NATIVE=off -DGGML_AVX=off -DGGML_AVX2=off -DGGML_AVX512=off -DGGML_FMA=off -DGGML_F16C=off -DGGML_OPENMP=off"
+    CMAKE_DEFS="-DCMAKE_SKIP_RPATH=on -DBUILD_SHARED_LIBS=on -DCMAKE_POSITION_INDEPENDENT_CODE=on -DGGML_NATIVE=off -DGGML_AVX=off -DGGML_AVX2=off -DGGML_AVX512=off -DGGML_FMA=off -DGGML_F16C=off -DGGML_OPENMP=off -DGGML_VULKAN=1"
     BUILD_DIR="../build/linux/${ARCH}/${RUNNER}"
     EXTRA_LIBS="-L${VULKAN_ROOT} -L${CAP_ROOT} -lvulkan -lcap"
     build
